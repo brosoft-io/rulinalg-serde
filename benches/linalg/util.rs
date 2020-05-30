@@ -1,4 +1,4 @@
-use rulinalg::matrix::Matrix;
+use rulinalg_serde::matrix::Matrix;
 use rand;
 use rand::{Rng, SeedableRng};
 

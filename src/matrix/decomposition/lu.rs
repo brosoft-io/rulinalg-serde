@@ -47,8 +47,8 @@ pub struct LUP<T> {
 /// Given a matrix `x`, computing the LU(P) decomposition is simple:
 ///
 /// ```
-/// use rulinalg::matrix::decomposition::{PartialPivLu, LUP, Decomposition};
-/// use rulinalg::matrix::Matrix;
+/// use rulinalg_serde::matrix::decomposition::{PartialPivLu, LUP, Decomposition};
+/// use rulinalg_serde::matrix::Matrix;
 ///
 /// let x = Matrix::<f64>::identity(4);
 ///
@@ -72,9 +72,9 @@ pub struct LUP<T> {
 /// that share the same coefficient matrix.
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg;
-/// # use rulinalg::matrix::decomposition::PartialPivLu;
-/// # use rulinalg::matrix::Matrix;
+/// # #[macro_use] extern crate rulinalg_serde;
+/// # use rulinalg_serde::matrix::decomposition::PartialPivLu;
+/// # use rulinalg_serde::matrix::Matrix;
 /// # fn main() {
 /// # let x = Matrix::identity(4);
 /// # let lu = PartialPivLu::decompose(x).unwrap();
@@ -117,9 +117,9 @@ pub struct LUP<T> {
 /// operation.
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg;
-/// # use rulinalg::matrix::decomposition::PartialPivLu;
-/// # use rulinalg::matrix::Matrix;
+/// # #[macro_use] extern crate rulinalg_serde;
+/// # use rulinalg_serde::matrix::decomposition::PartialPivLu;
+/// # use rulinalg_serde::matrix::Matrix;
 /// # fn main() {
 /// # let x = Matrix::<f64>::identity(4);
 /// # let lu = PartialPivLu::decompose(x).unwrap();
@@ -216,9 +216,9 @@ impl<T> PartialPivLu<T> where T: Any + Float {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
-    /// # use rulinalg::matrix::decomposition::PartialPivLu;
-    /// # use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde;
+    /// # use rulinalg_serde::matrix::decomposition::PartialPivLu;
+    /// # use rulinalg_serde::matrix::Matrix;
     /// # fn main() {
     /// let x = Matrix::identity(4);
     /// let lu = PartialPivLu::decompose(x).unwrap();
@@ -453,9 +453,9 @@ impl<T> FullPivLu<T> where T: Any + Float {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
-    /// # use rulinalg::matrix::decomposition::FullPivLu;
-    /// # use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde;
+    /// # use rulinalg_serde::matrix::decomposition::FullPivLu;
+    /// # use rulinalg_serde::matrix::Matrix;
     /// # fn main() {
     /// let x = Matrix::identity(4);
     /// let lu = FullPivLu::decompose(x).unwrap();
@@ -530,9 +530,9 @@ impl<T> FullPivLu<T> where T: Any + Float {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
-    /// # use rulinalg::matrix::decomposition::FullPivLu;
-    /// # use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde;
+    /// # use rulinalg_serde::matrix::decomposition::FullPivLu;
+    /// # use rulinalg_serde::matrix::Matrix;
     /// # fn main() {
     /// let x = matrix![1.0, 2.0, 3.0;
     ///                 4.0, 5.0, 6.0;
@@ -564,9 +564,9 @@ impl<T> FullPivLu<T> where T: Any + Float {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
-    /// # use rulinalg::matrix::decomposition::FullPivLu;
-    /// # use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde;
+    /// # use rulinalg_serde::matrix::decomposition::FullPivLu;
+    /// # use rulinalg_serde::matrix::Matrix;
     /// # fn main() {
     /// let x = Matrix::<f64>::identity(4);
     /// let lu = FullPivLu::decompose(x).unwrap();
@@ -676,8 +676,8 @@ impl<T> Matrix<T> where T: Any + Float
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = matrix![1.0, 2.0, 0.0;
     ///                 0.0, 3.0, 4.0;

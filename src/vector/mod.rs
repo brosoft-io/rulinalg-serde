@@ -2,6 +2,8 @@
 //!
 //! Currently contains all code
 //! relating to the vector linear algebra struct.
+extern crate serde;
+use self::serde::{Serialize, Deserialize};
 
 mod impl_ops;
 mod impl_vec;
@@ -9,8 +11,8 @@ mod impl_vec;
 /// The Vector struct.
 ///
 /// Can be instantiated with any type.
-#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[derive(Debug, PartialEq, Eq, Hash)]
+
+#[derive(Debug, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct Vector<T> {
     size: usize,
     data: Vec<T>,

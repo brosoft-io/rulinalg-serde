@@ -32,7 +32,7 @@
 //! We can create new matrices.
 //!
 //! ```
-//! use rulinalg::matrix::Matrix;
+//! use rulinalg_serde::matrix::Matrix;
 //!
 //! // A new matrix with 3 rows and 2 columns.
 //! let a = Matrix::new(3, 2, vec![1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
@@ -44,7 +44,7 @@
 //! We can perform operations on matrices.
 //!
 //! ```
-//! use rulinalg::matrix::Matrix;
+//! use rulinalg_serde::matrix::Matrix;
 //!
 //! // A new matrix with 3 rows and 2 columns.
 //! let a = Matrix::new(3, 2, vec![1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
@@ -60,7 +60,7 @@
 //! ```
 //! // Remember to enable macro usage in rulinalg!
 //! #[macro_use]
-//! extern crate rulinalg;
+//! extern crate rulinalg_serde;
 //!
 //! # fn main() {
 //! // Construct a 3x3 matrix of f64

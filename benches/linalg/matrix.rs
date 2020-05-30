@@ -1,5 +1,5 @@
-use rulinalg::matrix::{Matrix, Axes};
-use rulinalg::matrix::{BaseMatrix, BaseMatrixMut};
+use rulinalg_serde::matrix::{Matrix, Axes};
+use rulinalg_serde::matrix::{BaseMatrix, BaseMatrixMut};
 use test::Bencher;
 use test::black_box;
 
@@ -77,7 +77,7 @@ fn mat_elemul_63_1000(b: &mut Bencher) {
 #[bench]
 fn mat_mat_elemul_63_1000(b: &mut Bencher) {
 
-    use rulinalg::utils;
+    use rulinalg_serde::utils;
     use std::ops::Mul;
 
     let a = Matrix::new(63, 1000, vec![2f32; 63000]);

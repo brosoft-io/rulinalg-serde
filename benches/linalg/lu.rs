@@ -1,7 +1,7 @@
-use rulinalg::matrix::{BaseMatrix, BaseMatrixMut,
+use rulinalg_serde::matrix::{BaseMatrix, BaseMatrixMut,
                        Matrix};
-use rulinalg::matrix::decomposition::{PartialPivLu};
-use rulinalg::vector::Vector;
+use rulinalg_serde::matrix::decomposition::{PartialPivLu};
+use rulinalg_serde::vector::Vector;
 
 use linalg::util::reproducible_random_matrix;
 use libnum::{Zero, One};
@@ -29,7 +29,7 @@ fn nullify_lower_triangular_part<T: Zero>(matrix: &mut Matrix<T>) {
 }
 
 fn set_diagonal_to_one<T: One>(matrix: &mut Matrix<T>) {
-    use rulinalg::matrix::DiagOffset::Main;
+    use rulinalg_serde::matrix::DiagOffset::Main;
     for d in matrix.diag_iter_mut(Main) {
         *d = T::one();
     }

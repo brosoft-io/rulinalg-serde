@@ -93,7 +93,7 @@ pub fn scalar_comparison<T, C, E>(x: T, y: T, comparator: C)
 /// # Examples
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
 /// let x = 3.00;
 /// let y = 3.05;
 /// // Assert that |x - y| <= 0.1

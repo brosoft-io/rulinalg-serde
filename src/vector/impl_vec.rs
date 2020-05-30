@@ -18,7 +18,7 @@ impl<T> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::vector::Vector;
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let vec = Vector::new(vec![1.0,2.0,3.0,4.0]);
     /// ```
@@ -39,8 +39,8 @@ impl<T> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let v = Vector::from_fn(4, |x| x * 3);
     /// assert_eq!(v, vector![0, 3, 6, 9]);
@@ -169,8 +169,8 @@ impl<T: Copy> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     /// fn add_two(a: f64) -> f64 {
     ///     a + 2f64
     /// }
@@ -198,8 +198,8 @@ impl<T: Copy + PartialOrd> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0,2.0,0.0,5.0];
     /// let b = a.argmax();
@@ -218,8 +218,8 @@ impl<T: Copy + PartialOrd> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 0.0, 5.0];
     /// let b = a.argmin();
@@ -236,8 +236,8 @@ impl<T: Copy + PartialOrd> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 3.0, 4.0, 5.0];
     ///
@@ -266,7 +266,7 @@ impl<T: Clone + Zero> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::vector::Vector;
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let vec = Vector::<f64>::zeros(10);
     /// ```
@@ -286,7 +286,7 @@ impl<T: Clone + One> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::vector::Vector;
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let vec = Vector::<f64>::ones(10);
     /// ```
@@ -304,8 +304,8 @@ impl<T: Copy + Zero + Mul<T, Output = T> + Add<T, Output = T>> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 3.0, 4.0];
     /// let b = vector![2.0; 4];
@@ -327,8 +327,8 @@ impl<T: Copy + Zero + Add<T, Output = T>> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 3.0, 4.0];
     ///
@@ -347,8 +347,8 @@ impl<T: Copy + Mul<T, Output = T>> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 3.0, 4.0];
     /// let b = vector![1.0, 2.0, 3.0, 4.0];
@@ -369,8 +369,8 @@ impl<T: Copy + Div<T, Output = T>> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 3.0, 4.0];
     /// let b = vector![1.0, 2.0, 3.0, 4.0];
@@ -391,9 +391,9 @@ impl<T: Float> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
-    /// use rulinalg::norm::Euclidean;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
+    /// use rulinalg_serde::norm::Euclidean;
     ///
     /// let a = vector![3.0, 4.0];
     /// let c = a.norm(Euclidean);
@@ -410,9 +410,9 @@ impl<T: Float> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
-    /// use rulinalg::norm::Euclidean;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
+    /// use rulinalg_serde::norm::Euclidean;
     ///
     /// let a = vector![3.0, 4.0];
     /// let b = vector![0.0, 8.0];
@@ -436,8 +436,8 @@ impl<T: Float + FromPrimitive> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 3.0, 4.0];
     ///
@@ -457,8 +457,8 @@ impl<T: Float + FromPrimitive> Vector<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = vector![1.0, 2.0, 3.0, 4.0];
     ///

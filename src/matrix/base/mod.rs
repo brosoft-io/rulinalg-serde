@@ -8,7 +8,7 @@
 //! - `MatrixSliceMut`: a borrowed mutable block of `Matrix`
 //!
 //! ```
-//! use rulinalg::matrix::{Matrix, BaseMatrix};
+//! use rulinalg_serde::matrix::{Matrix, BaseMatrix};
 //!
 //! let a = Matrix::new(3,3, (0..9).collect::<Vec<usize>>());
 //!
@@ -64,7 +64,7 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = Matrix::new(3, 3, vec![2.0; 9]);
     /// let b = a.as_slice();
@@ -85,8 +85,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     /// 
     /// let mat = matrix![0, 1;
     ///                   3, 4;
@@ -115,8 +115,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let mat = matrix![0, 1, 2;
     ///                   3, 4, 5;
@@ -144,8 +144,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let mat = matrix![0, 1, 2;
     ///                   3, 4, 5;
@@ -165,8 +165,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let mat = matrix![0, 1, 2;
     ///                   3, 4, 5;
@@ -193,8 +193,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let mat = matrix![0, 1, 2;
     ///                   3, 4, 5;
@@ -214,8 +214,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let mat = matrix![0, 1, 2;
     ///                   3, 4, 5;
@@ -245,8 +245,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![0, 1;
     ///                 2, 3;
@@ -275,8 +275,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     /// let a = matrix![0, 1, 2;
     ///                 3, 4, 5;
     ///                 6, 7, 8];
@@ -305,10 +305,10 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
+    /// # #[macro_use] extern crate rulinalg_serde;
     ///
     /// # fn main() {
-    /// use rulinalg::matrix::{DiagOffset, Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{DiagOffset, Matrix, BaseMatrix};
     ///
     /// let a = matrix![0, 1, 2;
     ///                 3, 4, 5;
@@ -366,8 +366,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -396,8 +396,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -419,9 +419,9 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::BaseMatrix;
-    /// use rulinalg::norm::Euclidean;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::BaseMatrix;
+    /// use rulinalg_serde::norm::Euclidean;
     ///
     /// let a = matrix![3.0, 4.0];
     /// let c = a.norm(Euclidean);
@@ -440,9 +440,9 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::BaseMatrix;
-    /// use rulinalg::norm::Euclidean;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::BaseMatrix;
+    /// use rulinalg_serde::norm::Euclidean;
     ///
     /// let a = matrix![3.0, 4.0;
     ///                 1.0, 2.0];
@@ -468,8 +468,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::BaseMatrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::BaseMatrix;
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -491,8 +491,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix, Axes};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix, Axes};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -535,8 +535,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{BaseMatrix, Axes};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{BaseMatrix, Axes};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -586,7 +586,7 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = Matrix::<f64>::ones(3,3);
     ///
@@ -634,7 +634,7 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = Matrix::<f64>::ones(3,3);
     /// let b = &a.select_cols(&[2]);
@@ -682,8 +682,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -717,8 +717,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -752,7 +752,7 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = Matrix::<f64>::identity(3);
     /// let b = &a.select(&[0,1], &[1,2]);
@@ -804,8 +804,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0;
@@ -848,8 +848,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![1.0, 2.0, 3.0;
     ///                 4.0, 5.0, 6.0];
@@ -890,9 +890,9 @@ pub trait BaseMatrix<T>: Sized {
     ///
     /// ```
     /// # #[macro_use]
-    /// # extern crate rulinalg;
+    /// # extern crate rulinalg_serde;
     ///
-    /// use rulinalg::matrix::BaseMatrix;
+    /// use rulinalg_serde::matrix::BaseMatrix;
     ///
     /// # fn main() {
     /// let a = matrix![1, 2, 3;
@@ -915,8 +915,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let mat = matrix![1.0, 2.0, 3.0;
     ///                   4.0, 5.0, 6.0];
@@ -953,8 +953,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let a = matrix![1.0, 0.0;
     ///                 0.0, 1.0];
@@ -990,8 +990,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::BaseMatrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::BaseMatrix;
     /// use std::f32;
     ///
     /// let u = matrix![1.0, 2.0;
@@ -1032,8 +1032,8 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::BaseMatrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::BaseMatrix;
     /// use std::f32;
     ///
     /// let l = matrix![1.0, 0.0;
@@ -1071,7 +1071,7 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Axes, Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{Axes, Matrix, BaseMatrix};
     ///
     /// let a = Matrix::new(3,3, vec![2.0; 9]);
     /// let (b,c) = a.split_at(1, Axes::Row);
@@ -1119,7 +1119,7 @@ pub trait BaseMatrix<T>: Sized {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrix, MatrixSlice};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix, MatrixSlice};
     ///
     /// let a = Matrix::new(3,3, (0..9).collect::<Vec<usize>>());
     /// let slice = MatrixSlice::from_matrix(&a, [1,1], 2, 2);
@@ -1154,7 +1154,7 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut a = Matrix::new(3, 3, vec![2.0; 9]);
     /// let b = a.as_mut_slice();
@@ -1178,8 +1178,8 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrix, BaseMatrixMut};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix, BaseMatrixMut};
     ///
     /// let mut mat = matrix![0, 1;
     ///                       3, 4;
@@ -1209,8 +1209,8 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut a = Matrix::new(3,3, (0..9).collect::<Vec<usize>>());
     ///
@@ -1247,10 +1247,10 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     ///
     /// ```
     /// # #[macro_use]
-    /// # extern crate rulinalg;
+    /// # extern crate rulinalg_serde;
     ///
     /// # fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut mat = matrix![0, 1, 2;
     ///                       3, 4, 5;
@@ -1282,10 +1282,10 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     ///
     /// ```
     /// # #[macro_use]
-    /// # extern crate rulinalg;
+    /// # extern crate rulinalg_serde;
     ///
     /// # fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut mat = matrix![0, 1, 2;
     ///                       3, 4, 5;
@@ -1308,10 +1308,10 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     ///
     /// ```
     /// # #[macro_use]
-    /// # extern crate rulinalg;
+    /// # extern crate rulinalg_serde;
     ///
     /// # fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut mat = matrix![0, 1, 2;
     ///                       3, 4, 5;
@@ -1343,10 +1343,10 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     ///
     /// ```
     /// # #[macro_use]
-    /// # extern crate rulinalg;
+    /// # extern crate rulinalg_serde;
     ///
     /// # fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut mat = matrix![0, 1, 2;
     ///                       3, 4, 5;
@@ -1369,9 +1369,9 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
+    /// # #[macro_use] extern crate rulinalg_serde;
     /// # fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut x = matrix![0, 1;
     ///                     2, 3;
@@ -1423,9 +1423,9 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
+    /// # #[macro_use] extern crate rulinalg_serde;
     /// # fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut x = matrix![0, 1;
     ///                     2, 3;
@@ -1466,8 +1466,8 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut a = matrix![0, 1;
     ///                     2, 3;
@@ -1497,8 +1497,8 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut a = matrix![0, 1;
     ///                     2, 3;
@@ -1528,10 +1528,10 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg;
+    /// # #[macro_use] extern crate rulinalg_serde;
     ///
     /// # fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut, DiagOffset};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut, DiagOffset};
     ///
     /// let mut a = matrix![0, 1, 2;
     ///                     3, 4, 5;
@@ -1589,7 +1589,7 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// let mut mat = Matrix::<f32>::zeros(4,4);
     /// let one_block = Matrix::<f32>::ones(2,2);
@@ -1622,8 +1622,8 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, BaseMatrixMut};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrixMut};
     ///
     /// fn add_two(a: f64) -> f64 {
     ///     a + 2f64
@@ -1650,7 +1650,7 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Axes, Matrix, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Axes, Matrix, BaseMatrixMut};
     ///
     /// let mut a = Matrix::new(3,3, vec![2.0; 9]);
     /// let (b, c) = a.split_at_mut(1, Axes::Col);
@@ -1701,7 +1701,7 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, MatrixSliceMut, BaseMatrixMut};
+    /// use rulinalg_serde::matrix::{Matrix, MatrixSliceMut, BaseMatrixMut};
     ///
     /// let mut a = Matrix::new(3,3, (0..9).collect::<Vec<usize>>());
     /// let mut slice = MatrixSliceMut::from_matrix(&mut a, [1,1], 2, 2);

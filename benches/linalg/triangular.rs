@@ -1,6 +1,6 @@
 use test::Bencher;
-use rulinalg::matrix::Matrix;
-use rulinalg::matrix::BaseMatrix;
+use rulinalg_serde::matrix::Matrix;
+use rulinalg_serde::matrix::BaseMatrix;
 
 #[bench]
 fn solve_l_triangular_100x100(b: &mut Bencher) {

@@ -1,5 +1,5 @@
-use rulinalg::matrix::Matrix;
-use rulinalg::matrix::decomposition::{Cholesky, Decomposition};
+use rulinalg_serde::matrix::Matrix;
+use rulinalg_serde::matrix::decomposition::{Cholesky, Decomposition};
 use test::Bencher;
 
 #[bench]

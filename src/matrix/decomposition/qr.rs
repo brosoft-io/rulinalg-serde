@@ -106,9 +106,9 @@ pub struct ThinQR<T> {
 /// # Examples
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// use rulinalg::matrix::Matrix;
-/// use rulinalg::matrix::decomposition::{
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// use rulinalg_serde::matrix::Matrix;
+/// use rulinalg_serde::matrix::decomposition::{
 ///     Decomposition, HouseholderQr, QR
 /// };
 ///
@@ -237,10 +237,10 @@ impl<T> HouseholderQr<T> where T: Float {
     ///
     /// # Examples
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// # use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// # use rulinalg_serde::matrix::Matrix;
     /// # let x: Matrix<f64> = matrix![];
-    /// use rulinalg::matrix::decomposition::{HouseholderQr, ThinQR};
+    /// use rulinalg_serde::matrix::decomposition::{HouseholderQr, ThinQR};
     /// let x = matrix![3.0, 2.0;
     ///                 1.0, 2.0;
     ///                 4.0, 5.0];
@@ -328,8 +328,8 @@ impl<T> Matrix<T>
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let m = matrix![1.0, 0.5, 0.5;
     ///                 0.5, 1.0, 0.5;

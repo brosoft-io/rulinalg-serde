@@ -1,4 +1,4 @@
-use rulinalg::matrix::{BaseMatrix};
+use rulinalg_serde::matrix::{BaseMatrix};
 
 #[test]
 fn test_solve() {
@@ -89,8 +89,8 @@ fn matrix_lup_decomp() {
 
 #[test]
 fn matrix_partial_piv_lu() {
-    use rulinalg::matrix::decomposition::{LUP, PartialPivLu};
-    use rulinalg::matrix::decomposition::Decomposition;
+    use rulinalg_serde::matrix::decomposition::{LUP, PartialPivLu};
+    use rulinalg_serde::matrix::decomposition::Decomposition;
     // This is a port of the test for the old lup_decomp
     // function, using the new PartialPivLu struct.
 

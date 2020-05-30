@@ -169,7 +169,7 @@ impl<T: Any + Float + Signed> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::Matrix;
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = Matrix::new(4,4, (1..17).map(|v| v as f64).collect::<Vec<f64>>());
     /// let e = a.eigenvalues().expect("We should be able to compute these eigenvalues!");
@@ -330,8 +330,8 @@ impl<T: Any + Float + Signed> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = matrix![3., 2., 4.;
     ///                 2., 0., 2.;

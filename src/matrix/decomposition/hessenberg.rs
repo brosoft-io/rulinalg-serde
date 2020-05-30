@@ -14,8 +14,8 @@ impl<T: Any + Float> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = matrix![2., 0., 1., 1.;
     ///                 2., 0., 1., 2.;
@@ -90,8 +90,8 @@ impl<T: Any + Float> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::BaseMatrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::BaseMatrix;
     ///
     /// let a = matrix![1., 2., 3.;
     ///                 4., 5., 6.;

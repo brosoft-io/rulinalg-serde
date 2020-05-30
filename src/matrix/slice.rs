@@ -7,7 +7,7 @@ impl<'a, T> MatrixSlice<'a, T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, MatrixSlice};
+    /// use rulinalg_serde::matrix::{Matrix, MatrixSlice};
     ///
     /// let a = Matrix::new(3,3, (0..9).collect::<Vec<usize>>());
     /// let slice = MatrixSlice::from_matrix(&a, [1,1], 2, 2);
@@ -37,7 +37,7 @@ impl<'a, T> MatrixSlice<'a, T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::MatrixSlice;
+    /// use rulinalg_serde::matrix::MatrixSlice;
     ///
     /// let mut a = vec![4.0; 16];
     ///
@@ -77,7 +77,7 @@ impl<'a, T> MatrixSliceMut<'a, T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, MatrixSliceMut};
+    /// use rulinalg_serde::matrix::{Matrix, MatrixSliceMut};
     ///
     /// let mut a = Matrix::new(3,3, (0..9).collect::<Vec<usize>>());
     /// let slice = MatrixSliceMut::from_matrix(&mut a, [1,1], 2, 2);
@@ -110,7 +110,7 @@ impl<'a, T> MatrixSliceMut<'a, T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::MatrixSliceMut;
+    /// use rulinalg_serde::matrix::MatrixSliceMut;
     ///
     /// let mut a = vec![4.0; 16];
     ///
