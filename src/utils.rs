@@ -102,7 +102,7 @@ pub fn unrolled_sum<T>(mut xs: &[T]) -> T
 /// // Will print a vector of `7`s.
 /// println!("{:?}", a);
 /// ```
-pub fn in_place_vec_bin_op<F, T>(mut u: &mut [T], v: &[T], mut f: F)
+pub fn in_place_vec_bin_op<F, T>(u: &mut [T], v: &[T], mut f: F)
     where F: FnMut(&mut T, &T),
           T: Copy
 {

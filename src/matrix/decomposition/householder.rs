@@ -120,7 +120,7 @@ impl<T: Float> HouseholderReflection<T> {
         // Instead, we will use the provided buffer to hold the result of the
         // matrix-vector product.
         let ref v = self.v.data();
-        let mut u = buffer;
+        let u = buffer;
 
         // u = A^T v
         transpose_gemv(matrix, v, u);
