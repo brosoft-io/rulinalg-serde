@@ -461,7 +461,7 @@ impl<T: fmt::Display> fmt::Display for Matrix<T> {
                     }
                 }
                 if index < row.len() - 1 {
-                    try!(write!(f, " "));
+                    write!(f, " ")?;
                 }
             }
             write!(f, "{}", right_delimiter)
