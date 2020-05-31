@@ -13,7 +13,7 @@
 ///
 /// ```
 /// #[macro_use]
-/// extern crate rulinalg;
+/// extern crate rulinalg_serde;
 ///
 /// # fn main() {
 /// // Construct a 3x3 matrix of f64
@@ -28,9 +28,9 @@
 ///
 /// ```
 /// # #[macro_use]
-/// # extern crate rulinalg;
+/// # extern crate rulinalg_serde;
 /// # fn main() {
-/// use rulinalg::matrix::Matrix;
+/// use rulinalg_serde::matrix::Matrix;
 ///
 /// // Construct a 2x3 matrix of f32
 /// let mat: Matrix<f32> = matrix![1.0, 2.0, 3.0;

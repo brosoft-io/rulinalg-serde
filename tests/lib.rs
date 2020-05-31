@@ -1,5 +1,5 @@
 #[macro_use]
-extern crate rulinalg;
+extern crate rulinalg_serde;
 
 pub mod mat;
 

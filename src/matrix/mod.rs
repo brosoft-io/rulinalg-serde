@@ -15,6 +15,9 @@ use vector::Vector;
 
 use utils;
 
+extern crate serde;
+use self::serde::{Serialize, Deserialize};
+
 pub mod decomposition;
 mod base;
 mod deref;
@@ -41,8 +44,7 @@ pub enum Axes {
 /// The `Matrix` struct.
 ///
 /// Can be instantiated with any type.
-#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct Matrix<T> {
     rows: usize,
     cols: usize,
@@ -89,8 +91,8 @@ pub struct MatrixSliceMut<'a, T: 'a> {
 /// # Example
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// use rulinalg::matrix::BaseMatrix;
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// use rulinalg_serde::matrix::BaseMatrix;
 ///
 /// let mat = matrix![1.0, 2.0;
 ///                   3.0, 4.0];
@@ -114,8 +116,8 @@ pub struct Row<'a, T: 'a> {
 /// # Example
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// use rulinalg::matrix::BaseMatrixMut;
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// use rulinalg_serde::matrix::BaseMatrixMut;
 ///
 /// let mut mat = matrix![1.0, 2.0;
 ///                       3.0, 4.0];
@@ -187,8 +189,8 @@ impl<'a, T: 'a> RowMut<'a, T> {
 /// # Example
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// use rulinalg::matrix::BaseMatrix;
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// use rulinalg_serde::matrix::BaseMatrix;
 ///
 /// let mat = matrix![1.0, 2.0;
 ///                   3.0, 4.0];
@@ -212,8 +214,8 @@ pub struct Column<'a, T: 'a> {
 /// # Example
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// use rulinalg::matrix::BaseMatrixMut;
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// use rulinalg_serde::matrix::BaseMatrixMut;
 ///
 /// let mut mat = matrix![1.0, 2.0;
 ///                   3.0, 4.0];

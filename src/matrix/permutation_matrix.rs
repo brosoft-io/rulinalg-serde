@@ -10,8 +10,8 @@ use libnum::Num;
 ///
 /// # Examples
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// use rulinalg::matrix::PermutationMatrix;
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// use rulinalg_serde::matrix::PermutationMatrix;
 ///
 /// let ref x = matrix![1, 2, 3;
 ///                     4, 5, 6;
@@ -203,7 +203,7 @@ impl<T> PermutationMatrix<T> {
     /// # Examples
     ///
     /// ```rust
-    /// use rulinalg::matrix::PermutationMatrix;
+    /// use rulinalg_serde::matrix::PermutationMatrix;
     /// let mut p = PermutationMatrix::<u32>::identity(3);
     /// p.swap_rows(1, 2);
     /// assert_eq!(p.map_row(1), 2);

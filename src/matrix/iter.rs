@@ -263,7 +263,7 @@ impl<'a, T> ExactSizeIterator for RowsMut<'a, T> {}
 /// We can create a new matrix from some data.
 ///
 /// ```
-/// use rulinalg::matrix::{Matrix, BaseMatrix};
+/// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
 ///
 /// let a : Matrix<f64> = vec![4f64; 16].chunks(4).collect();
 ///
@@ -274,7 +274,7 @@ impl<'a, T> ExactSizeIterator for RowsMut<'a, T> {}
 /// We can also do more interesting things.
 ///
 /// ```
-/// use rulinalg::matrix::{Matrix, BaseMatrix};
+/// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
 ///
 /// let a = Matrix::new(4,2, (0..8).collect::<Vec<usize>>());
 ///

@@ -37,11 +37,11 @@ use libnum::{Zero, Float};
 /// In this case, see the next subsections.
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// use rulinalg::matrix::decomposition::Cholesky;
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// use rulinalg_serde::matrix::decomposition::Cholesky;
 ///
 /// // Need to import Decomposition if we want to unpack
-/// use rulinalg::matrix::decomposition::Decomposition;
+/// use rulinalg_serde::matrix::decomposition::Decomposition;
 ///
 /// let x = matrix![ 1.0,  3.0,  1.0;
 ///                  3.0, 13.0, 11.0;
@@ -63,8 +63,8 @@ use libnum::{Zero, Float};
 /// solve linear systems for different right-hand sides.
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
-/// # use rulinalg::matrix::decomposition::Cholesky;
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
+/// # use rulinalg_serde::matrix::decomposition::Cholesky;
 /// # let x = matrix![ 1.0,  3.0,  1.0;
 /// #                  3.0, 13.0, 11.0;
 /// #                  1.0, 11.0, 21.0 ];
@@ -261,8 +261,8 @@ impl<T> Matrix<T>
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let m = matrix![1.0, 0.5, 0.5;
     ///                 0.5, 1.0, 0.5;

@@ -17,7 +17,7 @@ impl<T> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// let mat = Matrix::new(2,2, vec![1.0, 2.0, 3.0, 4.0]);
     ///
@@ -50,7 +50,7 @@ impl<T> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::{Matrix, BaseMatrix};
+    /// use rulinalg_serde::matrix::{Matrix, BaseMatrix};
     ///
     /// // Let's assume you have an array of "things" for
     /// // which you want to generate a distance matrix:
@@ -107,7 +107,7 @@ impl<T: Clone + Zero> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::Matrix;
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let mat = Matrix::<f64>::zeros(2,3);
     /// ```
@@ -126,7 +126,7 @@ impl<T: Clone + Zero> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::Matrix;
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let mat = Matrix::from_diag(&vec![1.0,2.0,3.0,4.0]);
     /// ```
@@ -154,7 +154,7 @@ impl<T: Clone + One> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::Matrix;
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let mat = Matrix::<f64>::ones(2,3);
     /// ```
@@ -175,7 +175,7 @@ impl<T: Clone + Zero + One> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::Matrix;
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let I = Matrix::<f64>::identity(4);
     /// ```
@@ -205,8 +205,8 @@ impl<T: Float + FromPrimitive> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, Axes};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, Axes};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -247,8 +247,8 @@ impl<T: Float + FromPrimitive> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::{Matrix, Axes};
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::{Matrix, Axes};
     ///
     /// let a = matrix![1.0, 2.0;
     ///                 3.0, 4.0];
@@ -328,9 +328,9 @@ impl<T: Any + Float> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
-    /// use rulinalg::vector::Vector;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
+    /// use rulinalg_serde::vector::Vector;
     ///
     /// let a = matrix![2.0, 3.0;
     ///                 1.0, 2.0];
@@ -362,8 +362,8 @@ impl<T: Any + Float> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = matrix![2., 3.;
     ///                 1., 2.];
@@ -392,7 +392,7 @@ impl<T: Any + Float> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
     /// let a = matrix![1.0, 2.0, 0.0;
     ///                 0.0, 3.0, 4.0;
     ///                 5.0, 1.0, 2.0];
@@ -450,18 +450,18 @@ impl<T: fmt::Display> fmt::Display for Matrix<T> {
                         -> Result<(), fmt::Error>
             where T: fmt::Display
         {
-            try!(write!(f, "{}", left_delimiter));
+            write!(f, "{}", left_delimiter)?;
             for (index, datum) in row.iter().enumerate() {
                 match f.precision() {
                     Some(places) => {
-                        try!(write!(f, "{:1$.2$}", datum, width, places));
+                        write!(f, "{:1$.2$}", datum, width, places)?;
                     }
                     None => {
-                        try!(write!(f, "{:1$}", datum, width));
+                        write!(f, "{:1$}", datum, width)?;
                     }
                 }
                 if index < row.len() - 1 {
-                    try!(write!(f, " "));
+                    write!(f, " ")?;
                 }
             }
             write!(f, "{}", right_delimiter)
@@ -470,19 +470,19 @@ impl<T: fmt::Display> fmt::Display for Matrix<T> {
         match self.rows {
             1 => write_row(f, &self.data, "[", "]", width),
             _ => {
-                try!(write_row(f,
+                write_row(f,
                                &self.data[0..self.cols],
                                "⎡", // \u{23a1} LEFT SQUARE BRACKET UPPER CORNER
                                "⎤", // \u{23a4} RIGHT SQUARE BRACKET UPPER CORNER
-                               width));
-                try!(f.write_str("\n"));
+                               width)?;
+                f.write_str("\n")?;
                 for row_index in 1..self.rows - 1 {
-                    try!(write_row(f,
+                    write_row(f,
                                    &self.data[row_index * self.cols..(row_index + 1) * self.cols],
                                    "⎢", // \u{23a2} LEFT SQUARE BRACKET EXTENSION
                                    "⎥", // \u{23a5} RIGHT SQUARE BRACKET EXTENSION
-                                   width));
-                    try!(f.write_str("\n"));
+                                   width)?;
+                    f.write_str("\n")?;
                 }
                 write_row(f,
                           &self.data[(self.rows - 1) * self.cols..self.rows * self.cols],

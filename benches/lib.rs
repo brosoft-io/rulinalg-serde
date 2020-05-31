@@ -1,7 +1,7 @@
 #![feature(test)]
 
 #[macro_use]
-extern crate rulinalg;
+extern crate rulinalg_serde;
 extern crate num as libnum;
 extern crate test;
 extern crate rand;

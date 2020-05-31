@@ -72,7 +72,7 @@ impl<T, C, E> MatrixComparisonResult<T, C, E>
                 }
 
                 // Strip off the last newline from the above
-                formatted_mismatches = formatted_mismatches.trim_right().to_string();
+                formatted_mismatches = formatted_mismatches.trim_end().to_string();
 
                 Some(format!("\n
 Matrices X and Y have {num} mismatched element pairs.
@@ -161,7 +161,7 @@ pub fn elementwise_matrix_comparison<T, M, C, E>(x: &M, y: &M, comparator: C)
 /// comparison of the two matrices.
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() { let x = matrix![1.0f64]; let y = matrix![1.0f64];
+/// # #[macro_use] extern crate rulinalg_serde; fn main() { let x = matrix![1.0f64]; let y = matrix![1.0f64];
 /// // Performs elementwise exact comparison
 /// assert_matrix_eq!(x, y);
 /// # }
@@ -172,7 +172,7 @@ pub fn elementwise_matrix_comparison<T, M, C, E>(x: &M, y: &M, comparator: C)
 /// For this purpose, `assert_matrix_eq!` provides several comparators.
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
 /// # let x = matrix![1.0f64]; let y = matrix![1.0f64];
 /// // Available comparators:
 /// assert_matrix_eq!(x, y, comp = exact);
@@ -212,7 +212,7 @@ pub fn elementwise_matrix_comparison<T, M, C, E>(x: &M, y: &M, comparator: C)
 /// The `max_eps` and `max_ulp` parameters can be tweaked to your preference with the syntax:
 ///
 /// ```
-/// # #[macro_use] extern crate rulinalg; fn main() {
+/// # #[macro_use] extern crate rulinalg_serde; fn main() {
 /// # let x = matrix![1.0f64]; let y = matrix![1.0f64];
 /// # let max_eps = 1.0; let max_ulp = 0;
 /// assert_matrix_eq!(x, y, comp = float, eps = max_eps, ulp = max_ulp);
@@ -267,7 +267,7 @@ pub fn elementwise_matrix_comparison<T, M, C, E>(x: &M, y: &M, comparator: C)
 ///
 /// ```rust,should_panic
 /// #[macro_use]
-/// extern crate rulinalg;
+/// extern crate rulinalg_serde;
 ///
 /// fn main() {
 ///     let a = matrix![1.00, 2.00;
@@ -302,8 +302,8 @@ pub fn elementwise_matrix_comparison<T, M, C, E>(x: &M, y: &M, comparator: C)
 ///
 /// ```
 /// #[macro_use]
-/// extern crate rulinalg;
-/// use rulinalg::matrix::Matrix;
+/// extern crate rulinalg_serde;
+/// use rulinalg_serde::matrix::Matrix;
 ///
 /// # fn main() {
 /// let ref a = matrix![1, 2;

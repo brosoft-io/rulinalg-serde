@@ -1,4 +1,4 @@
-use rulinalg::matrix::decomposition::{Decomposition, HouseholderQr};
+use rulinalg_serde::matrix::decomposition::{Decomposition, HouseholderQr};
 
 use linalg::util::reproducible_random_matrix;
 

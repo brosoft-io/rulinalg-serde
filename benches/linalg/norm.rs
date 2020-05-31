@@ -1,5 +1,5 @@
-use rulinalg::matrix::{Matrix, BaseMatrix};
-use rulinalg::norm::*;
+use rulinalg_serde::matrix::{Matrix, BaseMatrix};
+use rulinalg_serde::norm::*;
 use libnum::Float;
 use test::Bencher;
 use test::black_box;

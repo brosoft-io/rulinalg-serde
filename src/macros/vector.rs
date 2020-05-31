@@ -9,10 +9,10 @@
 ///
 /// ```
 /// #[macro_use]
-/// extern crate rulinalg;
+/// extern crate rulinalg_serde;
 ///
 /// # fn main() {
-/// use rulinalg::vector::Vector;
+/// use rulinalg_serde::vector::Vector;
 ///
 /// // Construct a vector of f64
 /// let vec = vector![1.0, 2.0, 3.0];
@@ -24,10 +24,10 @@
 ///
 /// ```
 /// #[macro_use]
-/// extern crate rulinalg;
+/// extern crate rulinalg_serde;
 ///
 /// # fn main() {
-/// use rulinalg::vector::Vector;
+/// use rulinalg_serde::vector::Vector;
 ///
 /// // Construct a vector of f32
 /// let vec: Vector<f32> = vector![1.0, 2.0, 3.0];

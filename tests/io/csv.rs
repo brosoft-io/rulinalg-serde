@@ -1,5 +1,5 @@
-use rulinalg::matrix::Matrix;
-use rulinalg::io::csv::{Reader, Writer};
+use rulinalg_serde::matrix::Matrix;
+use rulinalg_serde::io::csv::{Reader, Writer};
 
 #[test]
 fn test_read_csv_with_header() {

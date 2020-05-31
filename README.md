@@ -50,13 +50,13 @@ And then import the library using:
 
 ```rust
 #[macro_use]
-extern crate rulinalg;
+extern crate rulinalg_serde;
 ```
 
 Then import the modules and you're done!
 
 ```rust
-use rulinalg::matrix::Matrix;
+use rulinalg_serde::matrix::Matrix;
 
 // Create a 2x2 matrix:
 let a = Matrix::new(2, 2, vec![

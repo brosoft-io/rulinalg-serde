@@ -14,8 +14,8 @@ impl<T: Any + Float> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = matrix![2., 0., 1., 1.;
     ///                 2., 0., 1., 2.;
@@ -44,13 +44,13 @@ impl<T: Any + Float> Matrix<T> {
             {
                 let lower_slice = MatrixSlice::from_matrix(&self, [i + 1, i], n - i - 1, 1);
                 // Try to get the house holder transform - else map error and pass up.
-                h_holder_vec = try!(Matrix::make_householder_vec(&lower_slice.iter()
+                h_holder_vec = Matrix::make_householder_vec(&lower_slice.iter()
                         .cloned()
                         .collect::<Vec<_>>())
                     .map_err(|_| {
                         Error::new(ErrorKind::DecompFailure,
                                    "Cannot compute upper Hessenberg form.")
-                    }));
+                    })?;
             }
 
             {
@@ -90,8 +90,8 @@ impl<T: Any + Float> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::BaseMatrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::BaseMatrix;
     ///
     /// let a = matrix![1., 2., 3.;
     ///                 4., 5., 6.;
@@ -123,12 +123,12 @@ impl<T: Any + Float> Matrix<T> {
             let h_holder_vec: Matrix<T>;
             {
                 let lower_slice = MatrixSlice::from_matrix(&self, [i + 1, i], n - i - 1, 1);
-                h_holder_vec = try!(Matrix::make_householder_vec(&lower_slice.iter()
+                h_holder_vec = Matrix::make_householder_vec(&lower_slice.iter()
                         .cloned()
                         .collect::<Vec<_>>())
                     .map_err(|_| {
                         Error::new(ErrorKind::DecompFailure, "Could not compute eigenvalues.")
-                    }));
+                    })?;
             }
 
             let mut trans_block =
@@ -138,7 +138,7 @@ impl<T: Any + Float> Matrix<T> {
         }
 
         // Now we reduce to upper hessenberg
-        Ok((transform, try!(self.upper_hessenberg())))
+        Ok((transform, self.upper_hessenberg()?))
     }
 }
 

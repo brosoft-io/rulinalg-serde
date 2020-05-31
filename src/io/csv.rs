@@ -15,8 +15,8 @@ impl<T> Matrix<T> where T: Decodable {
     /// # Examples
     ///
     /// ```ignore
-    /// use rulinalg::io::csv::Reader;
-    /// use rulinalg::matrix::Matrix;
+    /// use rulinalg_serde::io::csv::Reader;
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let rdr = Reader::from_file("./data.csv").unwrap().has_headers(false);
     /// let res = Matrix::<f64>::read_csv(rdr).unwrap();
@@ -47,7 +47,7 @@ impl<T> Matrix<T> where T: Encodable {
     /// # Examples
     ///
     /// ```ignore
-    /// use rulinalg::io::csv::Writer;
+    /// use rulinalg_serde::io::csv::Writer;
     ///
     /// let mat = matrix![1., 7., 1.1;
     ///                   1., 3., 2.2;

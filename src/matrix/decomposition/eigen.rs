@@ -82,9 +82,9 @@ impl<T: Any + Float + Signed> Matrix<T> {
                       "Francis shift only works on matrices greater than 2x2.");
         debug_assert!(n == self.cols, "Matrix must be square for Francis shift.");
 
-        let mut h = try!(self
+        let mut h = self
             .upper_hessenberg()
-            .map_err(|_| Error::new(ErrorKind::DecompFailure, "Could not compute eigenvalues.")));
+            .map_err(|_| Error::new(ErrorKind::DecompFailure, "Could not compute eigenvalues."))?;
         h.balance_matrix();
 
         // The final index of the active matrix
@@ -104,9 +104,9 @@ impl<T: Any + Float + Signed> Matrix<T> {
             for k in 0..p - 1 {
                 let r = cmp::max(1, k) - 1;
 
-                let householder = try!(Matrix::make_householder(&[x, y, z]).map_err(|_| {
+                let householder = Matrix::make_householder(&[x, y, z]).map_err(|_| {
                     Error::new(ErrorKind::DecompFailure, "Could not compute eigenvalues.")
-                }));
+                })?;
 
                 {
                     // Apply householder transformation to block (on the left)
@@ -169,7 +169,7 @@ impl<T: Any + Float + Signed> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// use rulinalg::matrix::Matrix;
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = Matrix::new(4,4, (1..17).map(|v| v as f64).collect::<Vec<f64>>());
     /// let e = a.eigenvalues().expect("We should be able to compute these eigenvalues!");
@@ -196,7 +196,7 @@ impl<T: Any + Float + Signed> Matrix<T> {
     }
 
     fn direct_2_by_2_eigendecomp(&self) -> Result<(Vec<T>, Matrix<T>), Error> {
-        let eigenvalues = try!(self.direct_2_by_2_eigenvalues());
+        let eigenvalues = self.direct_2_by_2_eigenvalues()?;
         // Thanks to
         // http://www.math.harvard.edu/archive/21b_fall_04/exhibits/2dmatrices/index.html
         // for this characterization—
@@ -223,10 +223,10 @@ impl<T: Any + Float + Signed> Matrix<T> {
                       "Francis shift only works on matrices greater than 2x2.");
         debug_assert!(n == self.cols, "Matrix must be square for Francis shift.");
 
-        let (u, mut h) = try!(self.upper_hess_decomp().map_err(|_| {
+        let (u, mut h) = self.upper_hess_decomp().map_err(|_| {
             Error::new(ErrorKind::DecompFailure,
                        "Could not compute eigen decomposition.")
-        }));
+        })?;
         h.balance_matrix();
         let mut transformation = Matrix::identity(n);
 
@@ -247,10 +247,10 @@ impl<T: Any + Float + Signed> Matrix<T> {
             for k in 0..p - 1 {
                 let r = cmp::max(1, k) - 1;
 
-                let householder = try!(Matrix::make_householder(&[x, y, z]).map_err(|_| {
+                let householder = Matrix::make_householder(&[x, y, z]).map_err(|_| {
                     Error::new(ErrorKind::DecompFailure,
                                "Could not compute eigen decomposition.")
-                }));
+                })?;
 
                 {
                     // Apply householder transformation to block (on the left)
@@ -330,8 +330,8 @@ impl<T: Any + Float + Signed> Matrix<T> {
     /// # Examples
     ///
     /// ```
-    /// # #[macro_use] extern crate rulinalg; fn main() {
-    /// use rulinalg::matrix::Matrix;
+    /// # #[macro_use] extern crate rulinalg_serde; fn main() {
+    /// use rulinalg_serde::matrix::Matrix;
     ///
     /// let a = matrix![3., 2., 4.;
     ///                 2., 0., 2.;

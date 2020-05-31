@@ -1,5 +1,5 @@
-use rulinalg::matrix::PermutationMatrix;
-use rulinalg::vector::Vector;
+use rulinalg_serde::matrix::PermutationMatrix;
+use rulinalg_serde::vector::Vector;
 
 use test::Bencher;
 
